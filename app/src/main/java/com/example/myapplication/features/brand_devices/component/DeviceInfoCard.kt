@@ -18,13 +18,14 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 
 @Composable
-fun DeviceInfoCard(deviceName: String, deviceImage: String) {
+fun DeviceInfoCard(deviceName: String, deviceImage: String,onClick: () -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Box(
             modifier = Modifier
                 .clickable {
+                    onClick()
                 }
                 .height(200.dp)
                 .background(Color.Transparent)

@@ -83,8 +83,9 @@ fun AllBrandsScreen(
                             horizontalArrangement = Arrangement.spacedBy(10.dp)
                         ) {
                             items(allBrandsState.data!!.count()) { index ->
-                                GridBox(brandName = allBrandsState.data!![index].brand_name, onTap = {
-                                    thread (start = true){
+                                GridBox(
+                                    brandName = allBrandsState.data!![index].brand_name,
+                                    onTap = {
                                         val reqData = DeviceListRequest(
                                             "device-list-by-brand",
                                             allBrandsState.data?.get(index)!!.brand_id,
@@ -99,9 +100,8 @@ fun AllBrandsScreen(
                                         ) {
                                             launchSingleTop = true
                                         }
-                                    }
 
-                                })
+                                    })
                             }
                         }
                     } else {
